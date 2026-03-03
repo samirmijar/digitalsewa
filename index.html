@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Toolsyde Store • Premium Digital Services</title>
+<title>The Sam Store • Premium Digital Services</title>
 <meta name="theme-color" content="#0b0616" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 
@@ -386,11 +386,7 @@
   }
 
   .btnOffer{border-color: rgba(0,234,255,.18); animation: offerFloat 2.8s ease-in-out infinite;}
-  .btnOffer img{
-    width:22px;height:22px;
-    border-radius:7px;
-    filter: drop-shadow(0 10px 18px rgba(0,234,255,.20));
-  }
+  .btnOffer img{width:22px;height:22px;border-radius:7px;filter: drop-shadow(0 10px 18px rgba(0,234,255,.20));}
   .btnOffer::before{
     content:"";
     position:absolute; inset:-1px;
@@ -427,7 +423,6 @@
     filter: drop-shadow(0 26px 46px rgba(0,0,0,.60));
   }
 
-  /* ===== Sections ===== */
   .section{margin-top:22px}
   .sectionHead{
     display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
@@ -566,8 +561,9 @@
     html{scroll-behavior:auto}
   }
 
-  /* ===== Small helper styles for the form inputs (same vibe) ===== */
+  /* ===== Input style for form/search (matches your theme) ===== */
   .field{
+    width:100%;
     padding:14px;
     border-radius:14px;
     border:1px solid rgba(255,255,255,.15);
@@ -581,7 +577,6 @@
 </head>
 
 <body>
-  <!-- Premium FX -->
   <div class="bgFX" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
@@ -591,7 +586,6 @@
     <div class="grain"></div>
   </div>
 
-  <!-- HEADER -->
   <header>
     <div class="topbar">
       <div class="left-icons">
@@ -610,10 +604,9 @@
         </div>
       </div>
 
-      <a class="brand" href="index.html" aria-label="Toolsyde Store Home">
-        <!-- Replace with your PNG logo path -->
-        <img src="png.images/toolsyde-logo.png" alt="Toolsyde Store">
-        <span>Toolsyde Store</span>
+      <a class="brand" href="index.html" aria-label="The Sam Store Home">
+        <img src="png.images/samstore-logo.gif" alt="The Sam Store">
+        <span>The Sam Store</span>
       </a>
 
       <div class="right-icons">
@@ -632,14 +625,11 @@
     </div>
   </header>
 
-  <!-- Drawer -->
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <aside class="drawer" id="drawer" aria-label="Main menu">
     <button class="close" id="drawerClose" aria-label="Close menu">×</button>
     <nav>
       <a class="primary" href="#products">SHOP</a>
-      <a href="#offer">TODAY’S OFFER</a>
-      <a href="#trust">WHY US</a>
       <a href="#contact">CONTACT</a>
     </nav>
   </aside>
@@ -668,16 +658,11 @@
             </span>
             <span class="pill">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12c0 4.418-4.03 8-9 8-1.32 0-2.57-.223-3.7-.627L3 20l.76-3.04C3.27 15.76 3 14.9 3 14c0-4.418 4.03-8 9-8s9 3.582 9 8Z"/></svg>
-              WhatsApp support
+              WhatsApp/Viber support
             </span>
           </div>
 
-          <div class="ctaRow" id="offer">
-            <a class="btn btnOffer" href="#products">
-              <img src="png.images/Referral-gift.gif" alt="Offer">
-              TODAY’S OFFER
-            </a>
-
+          <div class="ctaRow">
             <a class="btn btnPrimary" href="#products">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
                 <path d="M6 7h12l-1 14H7L6 7Z" />
@@ -686,12 +671,8 @@
               SHOP NOW
             </a>
 
-            <a class="btn" href="#contact">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.06a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92Z"/>
-              </svg>
-              CONTACT
-            </a>
+            <a class="btn" href="https://wa.me/9779860003403" target="_blank" rel="noopener">WHATSAPP</a>
+            <a class="btn" href="#contact">ORDER FORM</a>
           </div>
         </div>
 
@@ -701,7 +682,7 @@
       </div>
     </section>
 
-    <!-- Categories -->
+    <!-- Categories (keep as you want) -->
     <section class="section reveal">
       <div class="sectionHead">
         <h2>Popular Categories</h2>
@@ -720,7 +701,7 @@
           <div class="foot">Fast activation • Support included</div>
         </a>
 
-        <a class="card" href="#products" data-prefill="Game Top-Up">
+        <a class="card" href="#products" data-prefill="Games">
           <div class="cardTop">
             <img src="png.images/logo-freefire.png" alt="Game Top-Up">
             <div>
@@ -755,7 +736,7 @@
       </div>
     </section>
 
-    <!-- PRODUCTS (same design) -->
+    <!-- ✅ PRODUCTS SECTION ADDED -->
     <section class="section reveal" id="products">
       <div class="sectionHead">
         <h2>Featured Products</h2>
@@ -772,12 +753,8 @@
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
         ">
-          <input id="searchInput" class="field" type="text"
-                 placeholder="Search products (e.g. ChatGPT, YouTube, PUBG...)"
-                 style="width:100%; padding:12px 12px; border-radius:14px;" />
-          <button id="searchBtn" class="btn" style="padding:12px 14px; border-radius:16px; font-size:13px;">
-            Search
-          </button>
+          <input id="searchInput" class="field" type="text" placeholder="Search (ChatGPT, YouTube, PUBG...)" style="padding:12px 12px; border-radius:14px;" />
+          <button id="searchBtn" class="btn" style="padding:12px 14px; border-radius:16px; font-size:13px;">Search</button>
         </div>
 
         <div id="catChips" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
@@ -786,8 +763,8 @@
       <div class="grid" id="productGrid"></div>
     </section>
 
-    <!-- Trust -->
-    <section class="section reveal" id="trust">
+    <!-- Trust (keep same) -->
+    <section class="section reveal">
       <div class="sectionHead">
         <h2>Why People Choose Us</h2>
       </div>
@@ -812,7 +789,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12c0 4.418-4.03 8-9 8-1.32 0-2.57-.223-3.7-.627L3 20l.76-3.04C3.27 15.76 3 14.9 3 14c0-4.418 4.03-8 9-8s9 3.582 9 8Z"/></svg>
             Real Support
           </b>
-          <p>Contact us on WhatsApp/Viber for quick guidance and updates.</p>
+          <p>Contact us on WhatsApp / Viber for quick guidance and updates.</p>
         </div>
       </div>
     </section>
@@ -830,7 +807,7 @@
       </div>
     </section>
 
-    <!-- Contact / Order Form (Formcarry) -->
+    <!-- ✅ CONTACT / ORDER FORM ADDED (Formcarry + Viber) -->
     <section class="section reveal" id="contact">
       <div class="sectionHead">
         <h2>Contact / Order Form</h2>
@@ -847,22 +824,13 @@
         -webkit-backdrop-filter: blur(12px);
       ">
 
-        <form id="orderForm" action="https://formcarry.com/s/w-TUwZyixb9" method="POST">
+        <form action="https://formcarry.com/s/w-TUwZyixb9" method="POST">
           <div style="display:grid; gap:14px;">
             <input class="field" type="text" name="name" placeholder="Your Name" required />
-
             <input class="field" type="tel" name="phone" placeholder="Phone / WhatsApp Number" required />
-
-            <input class="field" id="productField" type="text" name="product" placeholder="Product Name (e.g. ChatGPT Plus 1 Month)" required />
-
-            <textarea class="field" name="message" placeholder="Additional Details (UID, email, plan, etc.)" style="min-height:110px;"></textarea>
-
+            <input class="field" id="productField" type="text" name="product" placeholder="Product Name (auto filled from product)" required />
+            <textarea class="field" name="message" placeholder="Details (UID, email, plan, etc.)" style="min-height:110px;"></textarea>
             <button type="submit" class="btn btnPrimary">Submit Order</button>
-
-            <div id="formMsg" style="display:none; padding:12px 14px; border-radius:14px; font-weight:800;
-                 background:rgba(0,234,255,.10); border:1px solid rgba(0,234,255,.22);">
-              ✅ Submitted! We’ll reply soon.
-            </div>
           </div>
         </form>
 
@@ -872,19 +840,20 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- WhatsApp floating -->
+  <!-- WhatsApp floating (UPDATED NUMBER) -->
   <a class="wa-fab" href="https://wa.me/9779860003403" target="_blank" rel="noopener" aria-label="WhatsApp">
     <img src="png.images/logo-whatsapp.png" alt="WhatsApp">
   </a>
 
   <footer>
-    Copyright ©2026 <strong>Toolsyde Store</strong>
+    Copyright ©2026 <strong>The Sam Store</strong> — owned by <strong>Samir Mijar</strong>
   </footer>
 
 <script>
-  // ===== Drawer open/close =====
+  // Drawer open/close
   const body = document.body;
   const overlay = document.getElementById('drawerOverlay');
   const closeBtn = document.getElementById('drawerClose');
@@ -898,7 +867,7 @@
   closeBtn.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeDrawer(); });
 
-  // ===== Scroll reveal =====
+  // Scroll reveal
   (function(){
     const items = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries)=>{
@@ -912,7 +881,7 @@
     items.forEach(el=>io.observe(el));
   }());
 
-  // ===== Theme toggle =====
+  // Theme toggle
   const themeBtn = document.getElementById('themeBtn');
   let bright = false;
   themeBtn.addEventListener('click', ()=>{
@@ -934,7 +903,7 @@
     }
   });
 
-  // ===== Particles (no library) =====
+  /* Particles */
   (function(){
     const c = document.getElementById('particles');
     if(!c) return;
@@ -954,29 +923,20 @@
     function init(){
       dots.length = 0;
       for(let i=0;i<DOTS;i++){
-        dots.push({
-          x: rand(0,w), y: rand(0,h),
-          vx: rand(-0.22,0.22), vy: rand(-0.22,0.22),
-          r: rand(1.1,2.3),
-          a: rand(0.18,0.55)
-        });
+        dots.push({ x: rand(0,w), y: rand(0,h), vx: rand(-0.22,0.22), vy: rand(-0.22,0.22), r: rand(1.1,2.3), a: rand(0.18,0.55) });
       }
     }
-
     function step(){
       ctx.clearRect(0,0,w,h);
-
       for(const p of dots){
         p.x += p.vx; p.y += p.vy;
         if(p.x<0||p.x>w) p.vx *= -1;
         if(p.y<0||p.y>h) p.vy *= -1;
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
         ctx.fillStyle = `rgba(200,230,255,${p.a})`;
         ctx.fill();
       }
-
       for(let i=0;i<dots.length;i++){
         for(let j=i+1;j<dots.length;j++){
           const a = dots[i], b = dots[j];
@@ -992,44 +952,53 @@
           }
         }
       }
-
       requestAnimationFrame(step);
     }
-
     resize(); init(); step();
     window.addEventListener('resize', ()=>{ resize(); init(); });
   }());
 
-  // ===== Products + WhatsApp Order + Prefill form =====
+  // ===== PRODUCTS SYSTEM =====
   const STORE = {
     waNumber: "9779860003403",
-    formFieldId: "productField"
+    formProductInputId: "productField",
+    contactAnchor: "#contact"
   };
 
-  // Update these icons to match your folder/files:
   const PRODUCTS = [
-    { id:"yt1m", cat:"Subscriptions", name:"YouTube Premium (1 Month)", note:"No ads • Background play • Offline", tag:"HOT", icon:"png.images/logo-youtube.png" },
-    { id:"gpt1m", cat:"Subscriptions", name:"ChatGPT Plus (1 Month)", note:"Priority access • Faster response", tag:"NEW", icon:"png.images/logo-chatgptai.png" },
-    { id:"nfx",  cat:"Subscriptions", name:"Netflix Plan", note:"Multiple options available", tag:"POPULAR", icon:"png.images/logo-netflix.png" },
+    { id:"yt-1m",   cat:"Subscriptions", name:"YouTube Premium (1 Month)", note:"No ads • Background play • Offline", tag:"HOT", icon:"png.images/logo-youtube.png" },
+    { id:"gpt-1m",  cat:"Subscriptions", name:"ChatGPT Plus (1 Month)", note:"Priority access • Faster response", tag:"NEW", icon:"png.images/logo-chatgptai.png" },
+    { id:"nf",      cat:"Subscriptions", name:"Netflix Plan", note:"Multiple options available", tag:"POPULAR", icon:"png.images/logo-netflix.png" },
+    { id:"sp",      cat:"Subscriptions", name:"Spotify Premium", note:"Music without ads • Premium features", tag:"TREND", icon:"png.images/logo-spotify.png" },
 
-    { id:"pubg", cat:"Games", name:"PUBG UC Topup", note:"Fast topup after verification", tag:"TOP", icon:"png.images/logo-pubg.png" },
-    { id:"ff",   cat:"Games", name:"Free Fire Diamonds", note:"UID topup • Quick support", tag:"TOP", icon:"png.images/logo-freefire.png" },
+    { id:"pubg",    cat:"Games", name:"PUBG UC Topup", note:"Fast topup after verification", tag:"TOP", icon:"png.images/logo-pubg.png" },
+    { id:"ff",      cat:"Games", name:"Free Fire Diamonds", note:"UID topup • Quick support", tag:"TOP", icon:"png.images/logo-freefire.png" },
 
-    { id:"steam",cat:"Gift Cards", name:"Steam Wallet Code", note:"Instant code delivery", tag:"FAST", icon:"png.images/logo-steam.png" },
-    { id:"gplay",cat:"Gift Cards", name:"Google Play Gift Card", note:"Instant code delivery", tag:"FAST", icon:"png.images/logo-googleplay.png" },
+    { id:"steam",   cat:"Gift Cards", name:"Steam Wallet Code", note:"Instant code delivery", tag:"FAST", icon:"png.images/logo-steam.png" },
+    { id:"gplay",   cat:"Gift Cards", name:"Google Play Gift Card", note:"Instant code delivery", tag:"FAST", icon:"png.images/logo-googleplay.png" },
 
-    { id:"canva",cat:"Software", name:"Canva Pro", note:"Creator tools • Premium features", tag:"CREATOR", icon:"png.images/logo-canva.png" },
-    { id:"capcut",cat:"Software", name:"CapCut Pro", note:"Pro editing • Smooth workflow", tag:"CREATOR", icon:"png.images/logo-capcut.png" },
+    { id:"canva",   cat:"Software", name:"Canva Pro", note:"Creator tools • Premium features", tag:"CREATOR", icon:"png.images/logo-canva.png" },
+    { id:"capcut",  cat:"Software", name:"CapCut Pro", note:"Pro editing • Smooth workflow", tag:"CREATOR", icon:"png.images/logo-capcut.png" },
 
-    { id:"ai",   cat:"AI Tools", name:"AI Tools Bundle", note:"Tools for productivity & content", tag:"PRO", icon:"png.images/logo-chatgptai.png" }
+    { id:"ai-pack", cat:"AI Tools", name:"AI Tools Bundle", note:"Tools for productivity & content", tag:"PRO", icon:"png.images/logo-chatgptai.png" }
   ];
 
-  // Simple cart badge counter (visual only)
   let cartCount = 0;
   const cartBadge = document.getElementById("cartBadge");
   function addToCart(){
     cartCount++;
     if(cartBadge) cartBadge.textContent = String(cartCount);
+  }
+
+  function waLink(productName){
+    const text = encodeURIComponent(`Hi! I want to buy: ${productName}. Please send price & process.`);
+    return `https://wa.me/${STORE.waNumber}?text=${text}`;
+  }
+
+  function prefillOrderForm(productName){
+    const input = document.getElementById(STORE.formProductInputId);
+    if(input) input.value = productName;
+    location.hash = STORE.contactAnchor;
   }
 
   const ALL = "All";
@@ -1040,12 +1009,6 @@
   const productGrid = document.getElementById("productGrid");
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
-  const productField = document.getElementById(STORE.formFieldId);
-
-  function waLink(productName){
-    const text = encodeURIComponent(`Hi! I want to buy: ${productName}. Please send price & process.`);
-    return `https://wa.me/${STORE.waNumber}?text=${text}`;
-  }
 
   function renderChips(){
     if(!catChips) return;
@@ -1062,17 +1025,14 @@
       chip.style.letterSpacing = ".4px";
       chip.style.background = (cat === activeCat) ? "var(--cta2)" : "rgba(255,255,255,.06)";
       chip.style.borderColor = (cat === activeCat) ? "transparent" : "rgba(255,255,255,.12)";
-      chip.onclick = ()=>{
-        activeCat = cat;
-        renderChips();
-        renderProducts();
-      };
+      chip.onclick = ()=>{ activeCat = cat; renderChips(); renderProducts(); };
       catChips.appendChild(chip);
     });
   }
 
   function renderProducts(){
     if(!productGrid) return;
+
     const q = (searchInput?.value || "").trim().toLowerCase();
 
     const filtered = PRODUCTS.filter(p=>{
@@ -1110,7 +1070,7 @@
                href="${waLink(p.name)}" target="_blank" rel="noopener">WhatsApp</a>
 
             <button class="btn" style="padding:10px 12px; border-radius:14px; font-size:12px;"
-               type="button" data-name="${p.name}">Order Form</button>
+               type="button" data-order="${p.name}">Order Form</button>
 
             <button class="btn" style="padding:10px 12px; border-radius:14px; font-size:12px;"
                type="button" data-add="1">Add</button>
@@ -1118,13 +1078,10 @@
         </div>
       `;
 
-      // Button actions
-      card.querySelector('button[data-add="1"]').addEventListener("click", addToCart);
-      card.querySelector('button[data-name]').addEventListener("click", (e)=>{
-        const name = e.currentTarget.getAttribute("data-name") || "";
-        if(productField) productField.value = name;
-        location.hash = "#contact";
+      card.querySelector('button[data-order]').addEventListener("click", (e)=>{
+        prefillOrderForm(e.currentTarget.getAttribute("data-order") || p.name);
       });
+      card.querySelector('button[data-add="1"]').addEventListener("click", addToCart);
 
       productGrid.appendChild(card);
     });
@@ -1133,12 +1090,10 @@
   if(searchBtn) searchBtn.addEventListener("click", renderProducts);
   if(searchInput) searchInput.addEventListener("input", renderProducts);
 
-  // Prefill from category cards
-  document.querySelectorAll('[data-prefill]').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      const v = el.getAttribute('data-prefill') || "";
-      if(searchInput) searchInput.value = v;
-      activeCat = ALL;
+  document.querySelectorAll("[data-prefill]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const cat = el.getAttribute("data-prefill");
+      activeCat = categories.includes(cat) ? cat : ALL;
       renderChips();
       renderProducts();
     });
@@ -1146,16 +1101,6 @@
 
   renderChips();
   renderProducts();
-
-  // ===== Optional: show success message after submit (basic) =====
-  const form = document.getElementById("orderForm");
-  const formMsg = document.getElementById("formMsg");
-  if(form){
-    form.addEventListener("submit", ()=>{
-      // Formcarry will redirect or submit; this message helps instantly
-      if(formMsg) formMsg.style.display = "block";
-    });
-  }
 </script>
 </body>
 </html>
