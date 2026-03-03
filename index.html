@@ -5,41 +5,274 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DigitalSewa.store</title>
   <style>
-    body{font-family:Arial, sans-serif; margin:0; background:#0b1220; color:#fff;}
-    .wrap{max-width:980px; margin:0 auto; padding:28px;}
-    .card{background:#121a2b; border:1px solid #24304a; border-radius:16px; padding:22px; margin-top:18px;}
-    .btn{display:inline-block; padding:12px 16px; border-radius:12px; background:#2dff88; color:#04110a; font-weight:700; text-decoration:none; margin-right:10px;}
-    .btn2{display:inline-block; padding:12px 16px; border-radius:12px; background:#1f2a44; color:#fff; font-weight:700; text-decoration:none; border:1px solid #2e3b5b;}
-    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:14px;}
-    .item{padding:14px; border:1px solid #24304a; border-radius:14px; background:#0f1728;}
-    h1{margin:0; font-size:34px;}
-    p{opacity:.9; line-height:1.5}
-    footer{opacity:.7; margin-top:18px; font-size:13px}
-    @media(max-width:640px){.grid{grid-template-columns:1fr;} h1{font-size:28px;}}
+    :root{
+      --bg:#0b1220; --card:#121a2b; --line:#23314c; --text:#eaf0ff;
+      --muted:#a9b3cc; --accent:#2dff88; --accent2:#00c2ff;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--text);}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:16px;}
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,18,32,.85); backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(35,49,76,.6);
+    }
+    .topbar-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px;}
+    .brand{display:flex; align-items:center; gap:10px;}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:grid; place-items:center; color:#05110a; font-weight:900;
+    }
+    .brand h1{font-size:16px; margin:0; letter-spacing:.4px;}
+    .brand small{display:block; color:var(--muted); font-size:12px; margin-top:2px;}
+    .menu{
+      width:42px; height:42px; border-radius:14px;
+      border:1px solid rgba(35,49,76,.8);
+      background:rgba(18,26,43,.7);
+      display:grid; place-items:center;
+    }
+    .menu div{width:18px; height:2px; background:var(--text); position:relative; opacity:.9;}
+    .menu div:before,.menu div:after{content:""; position:absolute; left:0; width:18px; height:2px; background:var(--text);}
+    .menu div:before{top:-6px} .menu div:after{top:6px}
+
+    /* Search */
+    .search{margin:14px 0 6px;}
+    .searchbox{
+      display:flex; gap:10px; align-items:center;
+      background:rgba(18,26,43,.85);
+      border:1px solid rgba(35,49,76,.9);
+      border-radius:999px; padding:10px 12px;
+    }
+    .searchbox input{
+      width:100%; border:0; outline:0; background:transparent; color:var(--text); font-size:15px;
+    }
+    .searchbtn{
+      border:0; border-radius:999px; padding:10px 14px; cursor:pointer;
+      background:var(--accent); color:#06120a; font-weight:800;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:12px;
+      border-radius:22px;
+      border:1px solid rgba(35,49,76,.8);
+      background:
+        radial-gradient(900px 200px at 20% 0%, rgba(45,255,136,.18), transparent 60%),
+        radial-gradient(700px 200px at 80% 0%, rgba(0,194,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(18,26,43,.9), rgba(12,18,32,.9));
+      overflow:hidden;
+    }
+    .hero-inner{padding:18px 16px; display:flex; align-items:flex-start; justify-content:space-between; gap:14px;}
+    .hero h2{margin:0; font-size:18px;}
+    .hero p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.5;}
+    .badge{
+      border:1px solid rgba(35,49,76,.9);
+      background:rgba(18,26,43,.6);
+      border-radius:999px; padding:8px 12px; font-size:12px; color:var(--muted);
+      white-space:nowrap;
+    }
+
+    /* Categories */
+    .cats{display:flex; gap:10px; overflow:auto; padding:14px 2px 2px;}
+    .chip{
+      border:1px solid rgba(35,49,76,.9);
+      background:rgba(18,26,43,.8);
+      color:var(--text);
+      padding:10px 14px; border-radius:999px; font-weight:700; font-size:13px;
+      cursor:pointer; white-space:nowrap;
+    }
+    .chip.active{background:rgba(45,255,136,.16); border-color:rgba(45,255,136,.55);}
+
+    /* Section */
+    .section{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:18px;}
+    .section h3{margin:0; font-size:18px;}
+    .section span{color:var(--muted); font-size:13px;}
+
+    /* Grid */
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px;}
+    @media(min-width:860px){ .grid{grid-template-columns:repeat(4,minmax(0,1fr));} }
+
+    .card{
+      background:rgba(18,26,43,.85);
+      border:1px solid rgba(35,49,76,.9);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .thumb{
+      height:120px;
+      background:linear-gradient(135deg, rgba(45,255,136,.18), rgba(0,194,255,.18));
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(234,240,255,.7);
+      font-weight:900; letter-spacing:1px;
+    }
+    .card-body{padding:12px;}
+    .tag{display:inline-block; font-size:11px; font-weight:800; color:#06120a;
+      background:var(--accent); padding:6px 10px; border-radius:999px;}
+    .title{margin:10px 0 0; font-size:14px; font-weight:800; line-height:1.25;}
+    .meta{margin-top:8px; display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px;}
+    .price{color:var(--text); font-weight:900;}
+    .btnrow{display:flex; gap:8px; margin-top:10px;}
+    .btn{
+      flex:1; border:1px solid rgba(35,49,76,.9);
+      background:rgba(11,18,32,.6);
+      border-radius:12px; padding:10px 10px;
+      font-weight:800; font-size:13px; cursor:pointer;
+      text-align:center;
+    }
+    .btn.primary{background:var(--accent); color:#06120a; border-color:rgba(45,255,136,.7);}
+
+    /* Floating WhatsApp */
+    .wa{
+      position:fixed; right:16px; bottom:16px; z-index:99;
+      background:var(--accent); color:#06120a; font-weight:900;
+      padding:14px 16px; border-radius:999px;
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+      display:flex; gap:10px; align-items:center;
+    }
+    .wa small{font-weight:800; opacity:.85}
+    footer{color:var(--muted); text-align:center; padding:28px 0 16px; font-size:12px;}
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <h1>DigitalSewa.store</h1>
-    <p>All digital products in one place — Games, OTT Subscriptions, Gift Cards, Software & SMM.</p>
-
-    <div class="card">
-      <a class="btn" href="https://wa.me/97798XXXXXXXX">WhatsApp Order</a>
-      <a class="btn2" href="mailto:support@digitalsewa.store">Email Support</a>
-
-      <div class="grid">
-        <div class="item"><b>🎮 Games</b><br/>Topups & codes</div>
-        <div class="item"><b>📺 OTT</b><br/>Netflix / Prime / etc</div>
-        <div class="item"><b>🎁 Gift Cards</b><br/>Google / Apple / Steam</div>
-        <div class="item"><b>💻 Software</b><br/>Keys & subscriptions</div>
-        <div class="item"><b>📈 SMM</b><br/>Social media services</div>
-        <div class="item"><b>⚡ Fast Delivery</b><br/>Quick response</div>
+  <div class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="logo">DS</div>
+        <div>
+          <h1>DigitalSewa.store</h1>
+          <small>Digital products • Fast delivery</small>
+        </div>
       </div>
-
-      <footer>
-        Payment: eSewa / Khalti / Bank Transfer • Contact us for pricing & availability.
-      </footer>
+      <div class="menu" title="Menu"><div></div></div>
     </div>
   </div>
+
+  <div class="container">
+    <div class="search">
+      <div class="searchbox">
+        <input id="q" placeholder="Search products, vouchers, or subscriptions..." />
+        <button class="searchbtn" onclick="applyFilters()">Search</button>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <h2>Instant Digital Delivery ⚡</h2>
+          <p>Subscriptions, gift cards, AI tools, and game topups — order via WhatsApp/DM.</p>
+        </div>
+        <div class="badge">Serving Nepal 🇳🇵 & Worldwide 🌍</div>
+      </div>
+
+      <div class="cats" id="cats">
+        <button class="chip active" data-cat="All" onclick="setCat('All', this)">All</button>
+        <button class="chip" data-cat="Subscriptions" onclick="setCat('Subscriptions', this)">Subscriptions</button>
+        <button class="chip" data-cat="Gift Cards" onclick="setCat('Gift Cards', this)">Gift Cards</button>
+        <button class="chip" data-cat="Games" onclick="setCat('Games', this)">Games</button>
+        <button class="chip" data-cat="Software" onclick="setCat('Software', this)">Software</button>
+        <button class="chip" data-cat="AI Tools" onclick="setCat('AI Tools', this)">AI Tools</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Popular Products</h3>
+      <span id="count">Showing 0 products</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <footer>
+      © <span id="yr"></span> DigitalSewa.store • For orders: WhatsApp / DM • Refund policy applies.
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating button -->
+  <a class="wa" id="wa" href="#" target="_blank" rel="noopener">
+    💬 Order on WhatsApp <small>tap</small>
+  </a>
+
+<script>
+  // ✅ Replace with your WhatsApp number (Nepal example format)
+  const WHATSAPP_NUMBER = "97798XXXXXXXX"; // <-- change this
+
+  // Products (edit anytime)
+  const PRODUCTS = [
+    {cat:"Subscriptions", name:"YouTube Premium (1 Month)", price:"Ask Price", tag:"HOT"},
+    {cat:"Subscriptions", name:"ChatGPT Plus (1 Month)", price:"Ask Price", tag:"NEW"},
+    {cat:"Subscriptions", name:"Netflix Plan", price:"Ask Price", tag:"POPULAR"},
+    {cat:"AI Tools", name:"AI Tools Pack", price:"Ask Price", tag:"PRO"},
+    {cat:"Gift Cards", name:"Google Play Gift Card", price:"Ask Price", tag:"FAST"},
+    {cat:"Gift Cards", name:"Steam Wallet Code", price:"Ask Price", tag:"FAST"},
+    {cat:"Games", name:"PUBG UC Topup", price:"Ask Price", tag:"TOP"},
+    {cat:"Games", name:"Free Fire Diamonds", price:"Ask Price", tag:"TOP"},
+    {cat:"Software", name:"Canva Pro", price:"Ask Price", tag:"CREATOR"},
+    {cat:"Software", name:"CapCut Pro", price:"Ask Price", tag:"CREATOR"},
+  ];
+
+  let activeCat = "All";
+
+  function waLink(productName){
+    const msg = encodeURIComponent(`Hi! I want to buy: ${productName}. Please send price & process.`);
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  }
+
+  function render(list){
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    list.forEach(p=>{
+      const el = document.createElement("div");
+      el.className = "card";
+      el.innerHTML = `
+        <div class="thumb">${p.cat.toUpperCase()}</div>
+        <div class="card-body">
+          <span class="tag">${p.tag}</span>
+          <div class="title">${p.name}</div>
+          <div class="meta">
+            <div>${p.cat}</div>
+            <div class="price">${p.price}</div>
+          </div>
+          <div class="btnrow">
+            <a class="btn primary" href="${waLink(p.name)}" target="_blank" rel="noopener">Order</a>
+            <button class="btn" onclick="copyText('${p.name.replace(/'/g,"\\'")}')">Copy</button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+    document.getElementById("count").textContent = `Showing ${list.length} products`;
+  }
+
+  function setCat(cat, btn){
+    activeCat = cat;
+    document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+    btn.classList.add("active");
+    applyFilters();
+  }
+
+  function applyFilters(){
+    const q = (document.getElementById("q").value || "").toLowerCase().trim();
+    const filtered = PRODUCTS.filter(p=>{
+      const matchCat = (activeCat==="All") || (p.cat===activeCat);
+      const matchQ = !q || (p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+      return matchCat && matchQ;
+    });
+    render(filtered);
+  }
+
+  function copyText(text){
+    navigator.clipboard?.writeText(text);
+    alert("Copied: " + text);
+  }
+
+  // Init
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  document.getElementById("wa").href = waLink("Order Inquiry");
+  render(PRODUCTS);
+</script>
 </body>
 </html>
